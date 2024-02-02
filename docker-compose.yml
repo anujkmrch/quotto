@@ -1,0 +1,22 @@
+version: '2'
+
+services:
+
+  mysql:
+    container_name: postgresql
+    image: postgres:latest
+    ports:
+      - 5432:5432
+    volumes:
+      - ./db_data:/var/lib/postgresql/data
+    environment:
+      MYSQL_ROOT_PASSWORD: wp
+      POSTGRES_USER: bdng
+      POSTGRES_PASSWORD: bdng'
+      
+
+
+      # mysql -u root -P 3306 -h localhost --protocol=tcp -p
+
+
+      # docker run -itd -e POSTGRES_USER=baeldung -e POSTGRES_PASSWORD=baeldung -p 5432:5432 -v /data:/var/lib/postgresql/data --name postgresql postgres
